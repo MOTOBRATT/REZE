@@ -1,0 +1,131 @@
+/* HOME: INTRO (full-screen wallpaper and title) and the four section tiles */
+
+/* ---------- INTRO ---------- */
+#intro {
+  position: relative;
+  height: 100svh;
+  overflow: hidden;
+  background: var(--p0);
+}
+
+#intro img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.intro-title {
+  position: absolute;
+  z-index: 3;
+  left: 5.9%;
+  bottom: 9%;
+}
+
+.intro-title h1 {
+  margin: 0;
+  font-size: min(15vw, 34svh);
+  line-height: .85;
+  font-weight: 900;
+  letter-spacing: -.02em;
+  -webkit-text-stroke: min(.7vw, 9px) #000;
+}
+
+.intro-title p {
+  margin: .8em 0 0;
+  letter-spacing: .5em;
+  font-size: min(5vw, 30px);
+  font-weight: 800;
+  color: var(--ac);
+  -webkit-text-stroke: 1.5px #000;
+}
+
+/* ---------- Section tiles: four wide static covers; the title takes the section colour on hover ---------- */
+#hub {
+  max-width: 1400px;
+  margin: auto;
+  padding: 18vh 6vw 14vh;
+}
+
+.tiles {
+  display: flex;
+  flex-direction: column;
+  gap: 4vh;
+}
+
+.tile {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 1;
+  overflow: hidden;
+  color: #fff;
+  text-decoration: none;
+  background: var(--p0);
+}
+
+.tile img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
+}
+
+/* dark fade on the left so the title stays readable */
+.tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(17, 17, 45, .8), transparent 65%);
+}
+
+.tn {
+  position: absolute;
+  z-index: 2;
+  left: 4%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(30px, 6vw, 88px);
+  font-weight: 900;
+  line-height: 1;
+  transition: color .6s;
+  /* black outline made of 24 shadows around the letters (keeps the letter shapes untouched) */
+  text-shadow:
+    2.60px 0.00px 0 #000, 2.51px 0.67px 0 #000, 2.25px 1.30px 0 #000,
+    1.84px 1.84px 0 #000, 1.30px 2.25px 0 #000, 0.67px 2.51px 0 #000,
+    0.00px 2.60px 0 #000, -0.67px 2.51px 0 #000, -1.30px 2.25px 0 #000,
+    -1.84px 1.84px 0 #000, -2.25px 1.30px 0 #000, -2.51px 0.67px 0 #000,
+    -2.60px 0.00px 0 #000, -2.51px -0.67px 0 #000, -2.25px -1.30px 0 #000,
+    -1.84px -1.84px 0 #000, -1.30px -2.25px 0 #000, -0.67px -2.51px 0 #000,
+    -0.00px -2.60px 0 #000, 0.67px -2.51px 0 #000, 1.30px -2.25px 0 #000,
+    1.84px -1.84px 0 #000, 2.25px -1.30px 0 #000, 2.51px -0.67px 0 #000;
+}
+
+@media (hover: hover) {
+  .tile:hover .tn {
+    color: var(--c);
+  }
+}
+
+.tile.live .tn {
+  color: var(--c); /* touch screens: set by js/home.js while the tile is in view */
+}
+
+.tile:focus-visible {
+  outline: 2px solid var(--ac);
+  outline-offset: -4px;
+}
+
+@media (max-width: 760px) {
+  .tile {
+    aspect-ratio: 12 / 7;
+  }
+
+  .tn {
+    top: 42%;
+  }
+}

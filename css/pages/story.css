@@ -1,0 +1,96 @@
+#page.t-story {
+  --ac: var(--p5);
+  --ac2: var(--p3);
+  background: linear-gradient(180deg, var(--p0), var(--p1));
+}
+
+/* STORY: full-width frames that reveal in colour, outlined chapter titles overlapping them */
+.st {
+  max-width: 1300px;
+  margin: auto;
+  padding: 16vh 6vw 10vh;
+}
+
+.st header {
+  margin-bottom: 12vh;
+}
+
+.sn {
+  margin-bottom: 16vh;
+}
+
+.sn img {
+  width: 100%;
+  aspect-ratio: 12/5;
+  object-fit: cover;
+  filter: saturate(.3) brightness(.7);
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.3s cubic-bezier(.2, .7, .2, 1), filter 1.4s .5s;
+}
+
+.sn.r img {
+  clip-path: inset(0 0 0 100%);
+}
+
+.sn.in img {
+  clip-path: inset(0);
+  filter: none;
+}
+
+.sn h2 {
+  position: relative;
+  margin: -.5em 0 0 3%;
+  font-size: clamp(40px, 9vw, 140px);
+  line-height: 1;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--ac);
+}
+
+.sn p {
+  max-width: 44ch;
+  margin: 2vh 0 0 38%;
+  color: var(--p6);
+}
+
+.sn.r h2 {
+  margin: -.5em 3% 0 0;
+  text-align: right;
+}
+
+.sn.r p {
+  margin: 2vh 38% 0 auto;
+}
+
+/* text-only chapters (no frame): the title and text rise in */
+.sn.tx h2 {
+  margin: 0;
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 1s, transform 1s;
+}
+
+.sn.tx.r h2 {
+  transform: translateX(40px);
+}
+
+.sn.tx p {
+  opacity: 0;
+  transition: opacity 1s .4s;
+}
+
+.sn.tx.in h2 {
+  opacity: 1;
+  transform: none;
+}
+
+.sn.tx.in p {
+  opacity: 1;
+}
+
+@media (max-width: 760px) {
+  .sn p,
+  .sn.r p {
+    margin: 2vh 0 0;
+  }
+}

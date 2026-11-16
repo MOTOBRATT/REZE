@@ -1,0 +1,29 @@
+/* SECTION PAGES, shared: the big gradient page title and the "reveal on scroll" effect (class "rv", see js/kit.js) */
+.hd {
+  padding: 16vh 6vw 8vh;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.hd h1,
+.st h1 {
+  margin: 0;
+  font-size: clamp(56px, 14vw, 200px);
+  line-height: .9;
+  font-weight: 900;
+  letter-spacing: -.02em;
+  background: linear-gradient(90deg, var(--ac), var(--ac2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.rv {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s, transform 1s;
+}
+
+.rv.in {
+  opacity: 1;
+  transform: none;
+}

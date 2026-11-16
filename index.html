@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="./icon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="./icon/favicon.svg" />
+  <link rel="shortcut icon" href="./icon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./icon/apple-touch-icon.png" />
+  <link rel="manifest" href="./icon/site.webmanifest" />
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Unofficial fan site about Reze, the Bomb Girl from Chainsaw Man.">
+  <title>REZE — The Bomb Girl</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/pages/common.css">
+  <link rel="stylesheet" href="css/pages/about.css">
+  <link rel="stylesheet" href="css/pages/motion.css">
+  <link rel="stylesheet" href="css/pages/story.css">
+  <link rel="stylesheet" href="css/pages/arts.css">
+</head>
+<body>
+  <div id="veil"></div>
+  <header class="top"><a id="logo" href="#home">REZE</a></header>
+
+  <!-- Home: INTRO + the four section tiles (js/home.js) -->
+  <main id="home" class="view on">
+    <section id="intro">
+      <img data-img="wall" alt="">
+      <div class="intro-title"><h1>REZE</h1><p>THE BOMB GIRL</p></div>
+    </section>
+    <section id="hub"><div class="tiles" id="tiles"></div></section>
+  </main>
+
+  <!-- A section page is rendered here by js/router.js -->
+  <main id="page" class="view"></main>
+
+  <footer id="ft">
+    <div class="ft-in">
+      <div class="ft-mark" aria-hidden="true">REZE</div>
+      <nav class="ft-c ft-c1" aria-label="Sections">
+        <h3>Sections</h3>
+        <a href="#about">About</a><a href="#motion">Motion</a><a href="#story">Story</a><a href="#arts">Arts</a>
+      </nav>
+      <div class="ft-c ft-c2"><h3>Manga</h3><p>Chainsaw Man</p><p>Tatsuki Fujimoto</p></div>
+      <div class="ft-c ft-c3"><h3>Film</h3><p>Reze Arc</p><p>MAPPA</p></div>
+      <div class="ft-c ft-c4">
+        <h3>Beginning</h3><p>Back to the first frame</p>
+        <button type="button" class="ft-top" id="ft-top"><span>Back to top</span></button>
+      </div>
+      <p class="ft-s ft-s1">Built from the film’s own frames.</p>
+      <p class="ft-s ft-s2">Unofficial fan project.</p>
+      <p class="ft-s ft-s3">Chainsaw Man © Tatsuki Fujimoto / Shueisha / MAPPA</p>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/arts-list.js"></script>
+  <script src="js/kit.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/pages/about.js"></script>
+  <script src="js/pages/motion.js"></script>
+  <script src="js/pages/story.js"></script>
+  <script src="js/pages/arts.js"></script>
+  <script src="js/router.js"></script>
+</body>
+</html>

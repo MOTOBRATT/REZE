@@ -1,0 +1,387 @@
+#page.t-about {
+  --ac: var(--p7);
+  --ac2: var(--p5);
+  background: radial-gradient(120% 60% at 50% 0, var(--p1), var(--p0) 70%);
+}
+
+/* ABOUT: four blocks, four colour fields (no scroll animation) */
+.ab p,
+.ab dl,
+.ab ul,
+.ab blockquote {
+  margin: 0;
+}
+
+.ab .no {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  color: var(--ac);
+}
+
+.ab h2 {
+  margin: 1.5vh 0 0;
+  font-weight: 900;
+  line-height: .92;
+  letter-spacing: -.02em;
+  font-size: clamp(44px, 9.5vw, 140px);
+  color: var(--p7);
+}
+
+/* 01 WHO IS REZE? — a large lead, two short paragraphs and a fact sheet */
+.ab1 {
+  max-width: 1300px;
+  margin: auto;
+  padding: 4vh 6vw 20vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 3vw;
+}
+
+.ab1 > header {
+  grid-column: 1/-1;
+}
+
+.ab1 .lead {
+  grid-column: 1/9;
+  margin-top: 8vh;
+  font-size: clamp(22px, 3.1vw, 42px);
+  line-height: 1.22;
+  font-weight: 700;
+  color: var(--p7);
+}
+
+.ab1 .txt {
+  grid-column: 2/7;
+  margin-top: 6vh;
+  color: var(--p6);
+}
+
+.ab1 .txt + .txt {
+  margin-top: 2.4vh;
+}
+
+.ab1 dl {
+  grid-column: 9/13;
+  grid-row: 2/5;
+  align-self: start;
+  margin-top: 8vh;
+}
+
+.ab1 dl div {
+  padding: 2vh 0 2.2vh;
+  border-top: 1px solid rgba(183, 182, 213, .4);
+}
+
+.ab1 dt {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: var(--ac);
+}
+
+.ab1 dd {
+  margin: .5em 0 0;
+  font-size: 17px;
+  line-height: 1.35;
+  font-weight: 600;
+  color: var(--p7);
+}
+
+/* 02 TWO SIDES — a light panel and a mid-tone panel that overlap and sit at different heights */
+.ab2 {
+  padding: 0 0 22vh;
+}
+
+.ab2 > header {
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 6vw;
+}
+
+.ab2 .sp {
+  max-width: 1400px;
+  margin: 9vh auto 0;
+  padding: 0 4vw;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.ab2 .sd {
+  padding: 7vh 4vw 8vh;
+}
+
+.ab2 .kk {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .35em;
+}
+
+.ab2 h3 {
+  margin: .7em 0 .6em;
+  font-size: clamp(30px, 4.4vw, 64px);
+  line-height: .98;
+  font-weight: 900;
+  letter-spacing: -.02em;
+}
+
+.ab2 .sd p {
+  font-size: 16px;
+  line-height: 1.65;
+  max-width: 46ch;
+}
+
+.ab2 ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 4vh;
+}
+
+.ab2 li {
+  padding: 1.5vh 0;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.ab2 .a {
+  grid-column: 1/8;
+  grid-row: 1;
+  background: var(--p7);
+  color: var(--p0);
+  padding-right: 30%;
+}
+
+.ab2 .a .kk {
+  color: var(--p2);
+}
+
+.ab2 .a li {
+  border-top: 1px solid rgba(17, 17, 45, .25);
+}
+
+.ab2 .b {
+  grid-column: 6/13;
+  grid-row: 1;
+  margin-top: 15vh;
+  background: var(--p2);
+  color: var(--p7);
+  padding-left: 7vw;
+  position: relative;
+  z-index: 1;
+}
+
+.ab2 .b .kk {
+  color: var(--p6);
+}
+
+.ab2 .b li {
+  border-top: 1px solid rgba(213, 211, 233, .3);
+}
+
+.ab2 .both {
+  max-width: 1300px;
+  margin: 13vh auto 0;
+  padding: 0 6vw;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 3vw;
+}
+
+.ab2 .both b {
+  grid-column: 3/13;
+  font-size: clamp(46px, 9vw, 136px);
+  line-height: .9;
+  font-weight: 900;
+  letter-spacing: -.02em;
+  color: var(--ac);
+}
+
+.ab2 .both p {
+  grid-column: 6/12;
+  margin-top: 4vh;
+  color: var(--p6);
+  line-height: 1.7;
+}
+
+/* 03 PERSONALITY — a solid light field, four traits at staggered heights */
+.ab3 {
+  background: var(--p6);
+  color: var(--p0);
+  padding: 14vh 0 20vh;
+}
+
+.ab3 > header,
+.ab3 .tr {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 6vw;
+}
+
+.ab3 .no {
+  color: var(--p2);
+}
+
+.ab3 h2 {
+  color: var(--p0);
+}
+
+.ab3 .tr {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 3vw;
+  align-items: start;
+  margin-top: 10vh;
+}
+
+.ab3 .t {
+  grid-column: span 6;
+  border-top: 3px solid var(--p0);
+  padding-top: 2.2vh;
+}
+
+.ab3 .t:nth-child(2) {
+  grid-column: 7/13;
+  margin-top: 11vh;
+}
+
+.ab3 .t:nth-child(3) {
+  grid-column: 2/8;
+  margin-top: 3vh;
+}
+
+.ab3 .t:nth-child(4) {
+  grid-column: 8/13;
+  margin-top: 13vh;
+}
+
+.ab3 .t b {
+  display: block;
+  font-size: clamp(32px, 5.2vw, 78px);
+  line-height: .95;
+  font-weight: 900;
+  letter-spacing: -.02em;
+}
+
+.ab3 .t p {
+  max-width: 38ch;
+  margin-top: 1.4em;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* 04 CHARACTER ANALYSIS — a dark field: a pull quote, then a ruled index of notes */
+.ab4 {
+  background: var(--p0);
+  padding: 16vh 0 22vh;
+}
+
+.ab4 .in {
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 6vw;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 3vw;
+}
+
+.ab4 .in > header {
+  grid-column: 1/-1;
+}
+
+.ab4 blockquote {
+  grid-column: 1/12;
+  margin-top: 11vh;
+  font-size: clamp(26px, 4.4vw, 64px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -.01em;
+  color: var(--ac);
+}
+
+.ab4 .rw {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 3vw;
+  margin-top: 9vh;
+  padding-top: 3vh;
+  border-top: 1px solid rgba(183, 182, 213, .35);
+}
+
+.ab4 blockquote + .rw {
+  margin-top: 14vh;
+}
+
+.ab4 .rw h3 {
+  grid-column: 1/5;
+  margin: 0;
+  font-size: clamp(20px, 2.2vw, 30px);
+  font-weight: 900;
+  letter-spacing: .02em;
+  color: var(--p7);
+}
+
+.ab4 .rw p {
+  grid-column: 6/12;
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--p6);
+}
+
+/* phones */
+@media (max-width: 760px) {
+  .ab1 {
+    display: block;
+    padding-bottom: 14vh;
+  }
+  .ab1 .lead {
+    margin-top: 6vh;
+  }
+  .ab1 .txt {
+    margin-top: 4vh;
+  }
+  .ab1 dl {
+    margin-top: 7vh;
+  }
+  .ab2 .sp {
+    display: block;
+    padding: 0;
+  }
+  .ab2 .sd {
+    padding: 6vh 7vw 7vh;
+  }
+  .ab2 .a {
+    padding-right: 7vw;
+  }
+  .ab2 .b {
+    margin: 0 0 0 7vw;
+    padding-left: 7vw;
+  }
+  .ab2 .both {
+    display: block;
+  }
+  .ab2 .both p {
+    margin-top: 3vh;
+  }
+  .ab3 .tr {
+    display: block;
+  }
+  .ab3 .t,
+  .ab3 .t:nth-child(n) {
+    margin-top: 7vh;
+  }
+  .ab4 .in {
+    display: block;
+  }
+  .ab4 .rw {
+    display: block;
+  }
+  .ab4 .rw p {
+    margin-top: 2vh;
+  }
+}

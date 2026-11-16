@@ -1,0 +1,91 @@
+/* BASE: palette, page shell, logo, page-fade veil */
+:root {
+  color-scheme: dark;
+
+  /* THE PALETTE: the only colours of the site (plus black for title outlines) */
+  --p0: #11112D;
+  --p1: #272648;
+  --p2: #444365;
+  --p3: #616080;
+  --p4: #7D7C9C;
+  --p5: #9A99B8;
+  --p6: #B7B6D5;
+  --p7: #D5D3E9;
+
+  --bg: var(--p0);
+  --ink: var(--p7);
+  --ac: var(--p6); /* accent; each section page overrides it */
+
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 15px/1.65 "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+}
+
+/* a view is either the home page or a section page; only one is shown */
+.view {
+  display: none;
+}
+
+.view.on {
+  display: block;
+}
+
+/* fade between pages (duration must match FADE_MS in js/router.js) */
+#veil {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: var(--p0);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .35s;
+}
+
+#veil.on {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.top {
+  position: fixed;
+  top: env(safe-area-inset-top, 0px);
+  left: 0;
+  z-index: 20;
+  padding: 18px 4vw;
+  mix-blend-mode: difference;
+}
+
+#logo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .35em;
+}
+
+/* reduced motion: no transitions anywhere, no smooth scrolling */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

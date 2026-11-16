@@ -1,0 +1,72 @@
+#page.t-arts {
+  --ac: var(--p7);
+  --ac2: var(--p4);
+  background: linear-gradient(180deg, var(--p1), var(--p2) 60%, var(--p1));
+}
+
+/* ARTS: self-arranging asymmetric collection (js/pages/arts.js) */
+.ar-pg .hd {
+  padding-bottom: 6vh;
+}
+
+.ar-pg .hd .sub {
+  display: block;
+  margin-top: 3vh;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: var(--p6);
+}
+
+.ar {
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 6vw 20vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 3vw;
+  row-gap: clamp(48px, 9vw, 140px);
+  align-items: start;
+}
+
+.ar figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.ar img {
+  width: 100%;
+  height: auto;
+}
+
+.ar figure.fx img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.ar figcaption {
+  margin-top: 12px;
+  font-size: 11px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--ac);
+}
+
+/* scroll animation: each photo rises and fades in as it enters the viewport */
+.ar figure.rv {
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity .9s ease, transform .9s ease;
+}
+
+.ar figure.rv.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 1000px) {
+  .ar {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
